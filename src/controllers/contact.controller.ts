@@ -9,6 +9,13 @@ import { ContactService } from './../services/contact.service';
   model: {
     type: ContactEntity,
   },
+  query: {
+    join: {
+      profile: {
+        eager: true,
+      },
+    },
+  },
 })
 @Controller('contact')
 export class ContactController implements CrudController<ContactEntity> {
